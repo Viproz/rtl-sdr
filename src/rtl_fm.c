@@ -860,6 +860,7 @@ static void optimal_settings(int freq, int rate)
 	struct demod_state *dm = &demod;
 	struct controller_state *cs = &controller;
 	dm->downsample = (1000000 / dm->rate_in) + 1;
+	dm->downsample = 4;
 	if (dm->downsample_passes) {
 		dm->downsample_passes = (int)log2(dm->downsample) + 1;
 		dm->downsample = 1 << dm->downsample_passes;
