@@ -781,6 +781,9 @@ void full_demod(struct demod_state *d)
 static void rtlsdr_callback(unsigned char *buf, uint32_t len, void *ctx)
 {
     fread(buf, sizeof(unsigned char), len, stdin);
+    if (feof(stdin)) {
+        do_exit = true;
+    }
 	int i;
 	struct dongle_state *s = ctx;
 	struct demod_state *d = s->demod_target;
