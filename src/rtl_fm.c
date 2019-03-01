@@ -782,7 +782,7 @@ static void rtlsdr_callback(unsigned char *buf, uint32_t len, void *ctx)
 {
     fread(buf, sizeof(unsigned char), len, stdin);
     if (feof(stdin)) {
-        do_exit = true;
+        do_exit = 1;
     }
 	int i;
 	struct dongle_state *s = ctx;
