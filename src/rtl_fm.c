@@ -1189,7 +1189,7 @@ int main(int argc, char **argv)
 	r = rtlsdr_open(&dongle.dev, (uint32_t)dongle.dev_index);
 	if (r < 0) {
 		fprintf(stderr, "Failed to open rtlsdr device #%d.\n", dongle.dev_index);
-		exit(1);
+		//exit(1);
 	}
 #ifndef _WIN32
 	sigact.sa_handler = sighandler;
