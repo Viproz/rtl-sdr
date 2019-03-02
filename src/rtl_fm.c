@@ -1183,7 +1183,7 @@ int main(int argc, char **argv)
 	}
 
 	if (dongle.dev_index < 0) {
-		exit(1);
+		//exit(1);
 	}
 
 	r = rtlsdr_open(&dongle.dev, (uint32_t)dongle.dev_index);
